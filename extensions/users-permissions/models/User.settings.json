@@ -1,0 +1,128 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "default": "+62 000 00000000"
+    },
+    "facebook": {
+      "type": "string",
+      "default": "https://facebook.com/yourusername/"
+    },
+    "twitter": {
+      "type": "string",
+      "default": "https://twitter.com/yourusername/"
+    },
+    "instagram": {
+      "type": "string",
+      "default": "https://instagram.com/yourusername/"
+    },
+    "youtube": {
+      "type": "string",
+      "default": "https://youtube.com/yourchannel/"
+    },
+    "linkedin": {
+      "type": "string",
+      "default": "https://linkedin.com/me/yourusername/"
+    },
+    "website": {
+      "type": "string",
+      "default": "https://yourwebsite.com/"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "man",
+        "woman",
+        "unknown"
+      ]
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text"
+    },
+    "podcasts": {
+      "via": "author",
+      "collection": "podcast"
+    },
+    "blogs": {
+      "via": "author",
+      "collection": "blog"
+    }
+  }
+}

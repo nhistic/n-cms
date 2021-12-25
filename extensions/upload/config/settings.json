@@ -1,0 +1,8 @@
+{
+    "provider": "cloudinary",
+    "providerOptions": {
+      "cloud_name": "asset-nhistic",
+      "api_key": "221699374987386",
+      "api_secret": "PNsY8jiB6GpC4YVSyzXqc2U7qr0"
+    }
+  }

@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "podcasts",
+  "info": {
+    "name": "podcast",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "pluginOptions": {},
+      "type": "string"
+    },
+    "slug": {
+      "pluginOptions": {},
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "pluginOptions": {},
+      "type": "richtext"
+    },
+    "description": {
+      "pluginOptions": {},
+      "type": "text"
+    },
+    "date": {
+      "pluginOptions": {},
+      "type": "date"
+    },
+    "time": {
+      "pluginOptions": {},
+      "type": "time"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {},
+      "component": "tags.tag-item"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "podcasts"
+    },
+    "hit": {
+      "pluginOptions": {},
+      "type": "biginteger"
+    }
+  }
+}

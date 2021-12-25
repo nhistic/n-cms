@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_description_job_items",
+  "info": {
+    "name": "job_item",
+    "icon": "digital-tachograph",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
